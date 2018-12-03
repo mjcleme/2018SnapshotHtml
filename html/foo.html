@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var cities=["Alpine", "Altamont","Alton","Altonah"];
+var mfunc = function()
+{
+    var part = document.getElementById("partial").value;
+    var sugg = document.getElementById("suggestions");
+    var inner ="<ul>";
+    for(var i = 0; i < cities.length; i++) {
+        if(cities[i].startsWith(part)) {
+             inner +="<li>"+cities[i]+"</li>";
+        }
+       
+    }
+    inner +="</ul>"
+    sugg.innerHTML=inner;
+}
+</script> 
+</head>
+<body>
+<input type="text" id="partial" onkeyup="mfunc()">
+<div id="suggestions">Suggested Cities</div>
+</body>
+
+</html>

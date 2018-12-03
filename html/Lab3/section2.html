@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>News</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"> </script>
+        <script src="section2.js"></script>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body ng-app="News" ng-controller="mainCtrl">
+        {{test}}
+        <form ng-submit="addPost()">
+            <input type="text" ng-model="formContent"></input>
+            <button type="submit">Post</button>
+        </form>
+        <div ng-repeat="something in posts | orderBy: '-upvotes'">
+            <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(something)"></span>
+            {{something.title}} - upvotes {{something.upvotes}}
+        </div>
+    </body>
+</html>

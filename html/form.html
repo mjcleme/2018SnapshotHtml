@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: lightblue;
+}
+</style>
+</head>
+<body>
+
+<h1>The onclick Event</h1>
+
+<p>The onclick event is used to trigger a function when an element is clicked on.</p>
+
+<p>Click the button to trigger a function that will output "Hello World" in a p element with id="demo".</p>
+
+<form>
+<input type="text" id="myform">
+<button onclick="myFunction(event)">Click me</button> 
+</form>
+
+
+<p id="demo"></p>
+
+<script>
+function myFunction(event) {
+  var hello = 5;
+  hello = "howdy";
+  // This is a comment
+  /* Comment
+   */
+  var array = [5,7,9,11,"hello"];
+  console.log(array);
+  array[100]=4;
+  
+  array["hi"]="There";
+  for(var item in array) {
+    console.log(item, array[item])
+  }
+  array.push(56);
+  console.log(array);
+  var car = {type:"Fiat", model:"500", color:"white"};
+  for(var item in car) {
+    console.log(item, car[item])
+  }
+  console.log(car.color);
+  document.getElementById("demo").innerHTML = "Hello "+document.getElementById("myform").value;
+  event.preventDefault();
+}
+</script>
+
+</body>
+</html>
